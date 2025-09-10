@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do or not to do</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: #f0f4f8;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      /* Container for todo list */
+      #ft_list {
+        width: 100%;
+        max-width: 400px;
+        min-height: 120px;
+        background: #fff;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        position: relative; /* important for absolute empty message */
+      }
+
+      /* Todo item style */
+      .todo_item {
+        background: #d9edf7;
+        margin: 6px 0;
+        padding: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .todo_item:hover {
+        background: #bce8f1;
+      }
+
+      /* New button */
+      #new_btn {
+        padding: 8px 16px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 6px;
+        background: #5bc0de;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #new_btn:hover {
+        background: #31b0d5;
+      }
+
+      /* Empty message centered in #ft_list */
+      #empty {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #888;
+        font-style: italic;
+        pointer-events: none;
+        text-align: center;
+      }
+
+      /* Responsive */
+      @media (max-width: 480px) {
+        #ft_list {
+          padding: 10px;
+        }
+        .todo_item {
+          padding: 8px;
+          font-size: 14px;
+        }
+        #new_btn {
+          width: 100%;
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To do or not to do</h1>
+    <button id="new_btn">New</button>
+    <div id="ft_list">
+      <p id="empty">No tasks yet</p>
+    </div>
+
+    <script src="todo.js"></script>
+  </body>
+</html>

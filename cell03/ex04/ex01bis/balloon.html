@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 01 - Balloon</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        font-family: sans-serif;
+      }
+      /* Balloon style */
+      #balloon {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="balloon" title="Click me!"></div>
+    <script>
+      // Balloon initial properties
+      const balloon = document.getElementById("balloon");
+      let size = 200; // starting size
+      const minSize = 200; // minimum size
+      const maxSize = 420; // max size before "explode"
+      const colors = ["red", "green", "blue"];
+      let colorIndex = 0; // current color index
+
+      function updateBalloon() {
+        balloon.style.width = size + "px";
+        balloon.style.height = size + "px";
+        balloon.style.backgroundColor = colors[colorIndex];
+      }
+
+      balloon.addEventListener("click", () => {
+        size += 10;
+        colorIndex = (colorIndex + 1) % colors.length;
+        if (size > maxSize) {
+          alert("💥 Balloon exploded!");
+          size = minSize; // reset size
+          colorIndex = 0; // reset color
+        }
+
+        updateBalloon();
+      });
+      balloon.addEventListener("mouseleave", () => {
+        size = Math.max(minSize, size - 5);
+        colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+        updateBalloon();
+      });
+
+      updateBalloon();
+    </script>
+  </body>
+</html>

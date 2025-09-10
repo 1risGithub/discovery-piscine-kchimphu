@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>It's over 9000 (jQuery)</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      div {
+        text-align: center;
+      }
+      input,
+      select,
+      button {
+        margin: 5px;
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        cursor: pointer;
+      }
+
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        appearance: textfield;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input
+        type="number"
+        id="left-operand"
+        min="0"
+        placeholder="Type Numbers Only"
+      />
+
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+
+      <input
+        type="number"
+        id="right-operand"
+        min="0"
+        placeholder="Type Numbers Only"
+      />
+
+      <button id="submit-btn">Try me!</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // Alert reminder every 30 seconds
+        setInterval(function () {
+          alert("Please, use me...");
+        }, 30000);
+
+        function isValidInteger(value) {
+          return Number.isInteger(value) && value >= 0;
+        }
+
+        $("#submit-btn").on("click", function () {
+          const left = parseFloat($("#left-operand").val());
+          const right = parseFloat($("#right-operand").val());
+          const operator = $("#operator").val();
+
+          // Validate input
+          if (!isValidInteger(left) || !isValidInteger(right)) {
+            alert("Error :(");
+            return;
+          }
+
+          if ((operator === "/" || operator === "%") && right === 0) {
+            console.log("It's over 9000!");
+            alert("It's over 9000!");
+            return;
+          }
+
+          let result;
+          switch (operator) {
+            case "+":
+              result = left + right;
+              break;
+            case "-":
+              result = left - right;
+              break;
+            case "*":
+              result = left * right;
+              break;
+            case "/":
+              result = left / right;
+              break;
+            case "%":
+              result = left % right;
+              break;
+          }
+
+          console.log(result);
+          alert(result);
+        });
+      });
+    </script>
+  </body>
+</html>
