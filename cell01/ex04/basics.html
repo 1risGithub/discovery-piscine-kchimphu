@@ -1,60 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Basics</title>
-    <style>
-        body {
-            background-color: pink;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: white;
-            text-align: center;
-            font-size: 3em;
-        }
-        .shops {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 20px;
-        }
-        .shop {
-            text-align: center;
-        }
-        .shop img {
-            width: 200px;
-            height: auto;
-        }
-        .footer {
-            text-align: right;
-            font-family: monospace;
-            font-style: italic;
-            margin: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Basics</title>
+<style>
+  body {
+    background-color: pink;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  h1 {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    margin: 20px 0;
+  }
+
+  .shops {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .shop {
+    flex: 1 1 300px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+  }
+
+  .shop a img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .shop img.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .shop a:hover img.hover-img {
+    opacity: 1;
+  }
+
+  .shop a:hover img.main-img {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  .product-name {
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  hr {
+    margin: 20px;
+  }
+
+  .footer {
+    background: rgba(255,192,203,0.3);
+    text-align: right;
+    font-family: monospace;
+    font-style: italic;
+    margin: 10px 20px;
+  }
+
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 2em;
+    }
+    .shops {
+      gap: 20px;
+      padding: 10px;
+    }
+    .footer {
+      text-align: center;
+      margin: 5px;
+      padding: 5px 0;
+    }
+  }
+</style>
 </head>
 <body>
-    <h1>Hello to Basics &#9733;</h1>
 
-    <div class="shops">
-        <div class="shop">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" 
-                 alt="Amazon"><br>
-            <a href="https://www.amazon.com" target="_blank">Visit Amazon</a>
-        </div>
-        <div class="shop">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg" 
-                 alt="eBay"><br>
-            <a href="https://www.ebay.com" target="_blank" rel="noopener">Visit eBay</a>
-        </div>
-    </div>
+<h1>Hello to Basics &#9733;</h1>
 
-    <hr>
+<div class="shops">
+  <!-- HyperX Solocast 2 -->
+  <div class="shop">
+    <a href="https://shopee.co.th/HyperX-Solocast-2-Gaming-Microphone-(AR0A0AA)-i.69583196.27489821419?xptdk=1b501577-736c-48ae-9e29-4c7f25d6c6b0" target="_blank" rel="noopener">
+      <div style="position: relative;">
+        <img class="main-img" src="https://row.hyperx.com/cdn/shop/files/hyperx_solocast_2_ar0a0aa_main_1.jpg?v=1755128126" alt="HyperX Solocast 2">
+        <img class="hover-img" src="https://row.hyperx.com/cdn/shop/files/hyperx_solocast_2_ar0a0aa_angle_5.jpg?v=1757320228&width=1946" alt="HyperX Solocast 2 Hover">
+      </div>
+    </a>
+    <a href="https://shopee.co.th/HyperX-Solocast-2-Gaming-Microphone-(AR0A0AA)-i.69583196.27489821419?xptdk=1b501577-736c-48ae-9e29-4c7f25d6c6b0" target="_blank" rel="noopener" class="product-name">
+      HyperX Solocast 2
+    </a>
+  </div>
 
-    <div class="footer">
-        © kchimphu 2025
-    </div>
+  <!-- ZOWIE XL2566X -->
+  <div class="shop">
+    <a href="https://shopee.co.th/ZOWIE-XL2566X-24.1%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-Fast-TN-400Hz-DyAc%E2%84%A22-Esports-Gaming-Monitor-(%E0%B8%88%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%A1%E0%B8%A1%E0%B8%B4%E0%B9%88%E0%B8%87-400hz-%E0%B8%88%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%A1)-i.426800738.28761567785" target="_blank" rel="noopener">
+      <div style="position: relative;">
+        <img class="main-img" src="https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/08/Computer/XL2566X%2B-1.jpg" alt="ZOWIE XL2566X">
+        <img class="hover-img" src="https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/08/Computer/XL2566X%2B-3.jpg" alt="ZOWIE XL2566X Hover">
+      </div>
+    </a>
+    <a href="https://shopee.co.th/ZOWIE-XL2566X-24.1%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7-Fast-TN-400Hz-DyAc%E2%84%A22-Esports-Gaming-Monitor-(%E0%B8%88%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%A1%E0%B8%A1%E0%B8%B4%E0%B9%88%E0%B8%87-400hz-%E0%B8%88%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%A1)-i.426800738.28761567785" target="_blank" rel="noopener" class="product-name">
+      ZOWIE XL2566X
+    </a>
+  </div>
+</div>
+
+<hr>
+
+<div class="footer">© kchimphu 2025</div>
+
 </body>
 </html>
