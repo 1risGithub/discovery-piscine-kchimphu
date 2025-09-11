@@ -1,4 +1,4 @@
-# Discovery Piscine - KChimphu
+# Discovery Piscine - kchimphu
 
 This repository contains my solutions and projects from the **Discovery Piscine** program.  
 It includes exercises in **C programming**, **Shell scripting**, and also **Web-related projects**.
@@ -7,10 +7,10 @@ It includes exercises in **C programming**, **Shell scripting**, and also **Web-
 
 ## 📂 Repository Structure
 
-- **cell00**
-- **cell01**
-- **cell02**
-- **cell03**
+- **cell00** - shell 
+- **cell01** - web 
+- **cell02** - web
+- **cell03** - web
 - **rush** – Group project ("Rush") involving C program design under time constraint.  
 
 ---
