@@ -14,10 +14,17 @@
   <body class="bg-white text-neutral-800">
     <!-- Navbar -->
     <nav
-      class="fixed top-0 left-0 w-full bg-white border-b border-neutral-200 px-8 py-4 flex justify-between z-50"
+      class="fixed top-0 left-0 w-full bg-white border-b border-neutral-200 px-8 py-4 flex justify-between items-center z-50"
     >
-      <span class="font-bold tracking-wider">DVICHITL</span>
-      <div class="space-x-6">
+      <!-- Left: Logo -->
+      <span class="font-bold tracking-wider">KCHIMPHU</span>
+
+      <!-- Right: Links + DateTime -->
+      <div class="flex items-center space-x-6">
+        <!-- DateTime -->
+        <span id="navbar-date-time" class="text-sm text-neutral-500"></span>
+
+        <!-- Links -->
         <a href="index.html" class="hover:underline">Home</a>
         <a href="#about" class="hover:underline">About</a>
         <a href="#skill" class="hover:underline">Skill</a>
@@ -257,8 +264,9 @@
       </div>
     </footer>
 
-    <script src="js/skillboard-dvichitl.js"></script>
+    <script src="js/skillboard-kchimphu.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/datetime.js"></script>
   </body>
 </html>
