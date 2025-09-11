@@ -4,25 +4,115 @@ const btn = document.getElementById("toggleSkillsBtn");
 let showAll = false;
 
 const tools = [
-  { name: "JavaScript", icon: "img/logo/javascript.png", description: "Programming Language", level: 60 },
-  { name: "NodeJS", icon: "img/logo/nodejs.svg", description: "Backend Framework", level: 80 },
-  { name: "NextJS", icon: "img/logo/nextjs.png", description: "Full Stack Framework", level: 50 },
-  { name: "Python", icon: "img/logo/python.png", description: "Programming Language", level: 80 },
-  { name: "FastAPI", icon: "img/logo/fastapi.png", description: "Backend Framework", level: 30 },
-  { name: "PHP", icon: "img/logo/php.jpeg", description: "Web Development", level: 60 },
-  { name: "PostgreSQL", icon: "img/logo/postgresql.png", description: "Database", level: 60 },
-  { name: "MicrosoftSQL", icon: "img/logo/microsoftsql.png", description: "Database", level: 60 },
-  { name: "MongoDB", icon: "img/logo/mongodb.png", description: "Database", level: 75 },
+  {
+    name: "JavaScript",
+    icon: "img/logo/javascript.png",
+    description: "Programming Language",
+    level: 60,
+  },
+  {
+    name: "NodeJS",
+    icon: "img/logo/nodejs.svg",
+    description: "Backend Framework",
+    level: 80,
+  },
+  {
+    name: "NextJS",
+    icon: "img/logo/nextjs.png",
+    description: "Full Stack Framework",
+    level: 50,
+  },
+  {
+    name: "Python",
+    icon: "img/logo/python.png",
+    description: "Programming Language",
+    level: 80,
+  },
+  {
+    name: "FastAPI",
+    icon: "img/logo/fastapi.png",
+    description: "Backend Framework",
+    level: 30,
+  },
+  {
+    name: "PHP",
+    icon: "img/logo/php.jpeg",
+    description: "Web Development",
+    level: 60,
+  },
+  {
+    name: "PostgreSQL",
+    icon: "img/logo/postgresql.png",
+    description: "Database",
+    level: 60,
+  },
+  {
+    name: "MicrosoftSQL",
+    icon: "img/logo/microsoftsql.png",
+    description: "Database",
+    level: 60,
+  },
+  {
+    name: "MongoDB",
+    icon: "img/logo/mongodb.png",
+    description: "Database",
+    level: 75,
+  },
   { name: "CSS", icon: "img/logo/css.png", description: "Styling", level: 80 },
-  { name: "TailwindCSS", icon: "img/logo/tailwind.png", description: "UI Framework", level: 40 },
-  { name: "Bootstrap", icon: "img/logo/bootstrap.png", description: "UI Framework", level: 60 },
-  { name: "Docker", icon: "img/logo/docker.jpg", description: "Containerization", level: 60 },
-  { name: "Figma", icon: "img/logo/figma.png", description: "Design Tool", level: 80 },
-  { name: "Arduino", icon: "img/logo/arduino.svg", description: "Microcontroller", level: 99 },
-  { name: "EasyEDA", icon: "img/logo/easyeda.png", description: "PCB Design", level: 75 },
-  { name: "STM", icon: "img/logo/STMicroelectronics.png", description: "Microcontroller", level: 50 },
-  { name: "Raspberry Pi", icon: "img/logo/Raspberry_Pi-Logo.wine.png", description: "Single Board Computer", level: 40 },
-  { name: "Cisco", icon: "img/logo/cisco.png", description: "Networking", level: 25 },
+  {
+    name: "TailwindCSS",
+    icon: "img/logo/tailwind.png",
+    description: "UI Framework",
+    level: 40,
+  },
+  {
+    name: "Bootstrap",
+    icon: "img/logo/bootstrap.png",
+    description: "UI Framework",
+    level: 60,
+  },
+  {
+    name: "Docker",
+    icon: "img/logo/docker.jpg",
+    description: "Containerization",
+    level: 60,
+  },
+  {
+    name: "Figma",
+    icon: "img/logo/figma.png",
+    description: "Design Tool",
+    level: 80,
+  },
+  {
+    name: "Arduino",
+    icon: "img/logo/arduino.svg",
+    description: "Microcontroller",
+    level: 99,
+  },
+  {
+    name: "EasyEDA",
+    icon: "img/logo/easyeda.png",
+    description: "PCB Design",
+    level: 75,
+  },
+  {
+    name: "STM",
+    icon: "img/logo/STMicroelectronics.png",
+    description: "Microcontroller",
+    level: 50,
+  },
+  {
+    name: "Raspberry Pi",
+    icon: "img/logo/Raspberry_Pi-Logo.wine.png",
+    description: "Single Board Computer",
+    level: 40,
+  },
+  {
+    name: "Cisco",
+    icon: "img/logo/cisco.png",
+    description: "Networking",
+    level: 25,
+  },
 ];
 
 function createToolCard(tool) {
@@ -49,7 +139,7 @@ function createToolCard(tool) {
 function renderTools() {
   skillsGrid.innerHTML = "";
   const displayed = showAll ? tools : tools.slice(0, 6);
-  displayed.forEach(tool => skillsGrid.appendChild(createToolCard(tool)));
+  displayed.forEach((tool) => skillsGrid.appendChild(createToolCard(tool)));
 
   btn.textContent = showAll ? "Show Less ▲" : "Show More ▼";
 }
