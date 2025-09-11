@@ -69,22 +69,25 @@
       }, 30000);
 
       function isValidInteger(value) {
-        return Number.isInteger(value) && value >= 0;
+        return !Number.isNaN(value) && Number.isInteger(value) && value >= 0;
       }
 
       document.getElementById("submit-btn").addEventListener("click", () => {
-        const left = parseFloat(document.getElementById("left-operand").value);
-        const right = parseFloat(
-          document.getElementById("right-operand").value
+        const left = parseInt(document.getElementById("left-operand").value, 10);
+        const right = parseInt(
+          document.getElementById("right-operand").value,
+          10
         );
         const operator = document.getElementById("operator").value;
 
         // Validate input
         if (!isValidInteger(left) || !isValidInteger(right)) {
+          console.log("Error :(");
           alert("Error :(");
           return;
         }
 
+        // Division or Modulo by zero
         if ((operator === "/" || operator === "%") && right === 0) {
           console.log("It's over 9000!");
           alert("It's over 9000!");
