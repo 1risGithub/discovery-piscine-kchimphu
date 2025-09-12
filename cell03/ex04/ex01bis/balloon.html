@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercise 01 - Balloon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
       body {
         margin: 0;
@@ -30,37 +31,40 @@
     <div id="balloon" title="Click me!"></div>
     <script>
       // Balloon initial properties
-      const balloon = document.getElementById("balloon");
-      let size = 200; // starting size
-      const minSize = 200; // minimum size
-      const maxSize = 420; // max size before "explode"
-      const colors = ["red", "green", "blue"];
-      let colorIndex = 0; // current color index
+      $(document).ready(function () {
+        const balloon = $("#balloon");
+        let size = 200;
+        const minSize = 200;
+        const maxSize = 420;
+        const colors = ["red", "green", "blue"];
+        let colorIndex = 0;
 
-      function updateBalloon() {
-        balloon.style.width = size + "px";
-        balloon.style.height = size + "px";
-        balloon.style.backgroundColor = colors[colorIndex];
-      }
-
-      balloon.addEventListener("click", () => {
-        size += 10;
-        colorIndex = (colorIndex + 1) % colors.length;
-        if (size > maxSize) {
-          alert("💥 Balloon exploded!");
-          size = minSize; // reset size
-          colorIndex = 0; // reset color
+        function updateBalloon() {
+          balloon
+            .width(size)
+            .height(size)
+            .css("background-color", colors[colorIndex]);
         }
 
-        updateBalloon();
-      });
-      balloon.addEventListener("mouseleave", () => {
-        size = Math.max(minSize, size - 5);
-        colorIndex = (colorIndex - 1 + colors.length) % colors.length;
-        updateBalloon();
-      });
+        balloon.click(function () {
+          size += 10;
+          colorIndex = (colorIndex + 1) % colors.length;
+          if (size > maxSize) {
+            alert("💥 Balloon exploded!");
+            size = minSize;
+            colorIndex = 0;
+          }
+          updateBalloon();
+        });
 
-      updateBalloon();
+        balloon.mouseleave(function () {
+          size = Math.max(minSize, size - 5);
+          colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+          updateBalloon();
+        });
+
+        updateBalloon();
+      });
     </script>
   </body>
 </html>
