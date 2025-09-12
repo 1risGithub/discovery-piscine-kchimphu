@@ -1,7 +1,7 @@
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  loader.style.opacity = "0";
-  setTimeout(() => (loader.style.display = "none"), 500);
+$(window).on("load", function () {
+  $("#loader").fadeOut(500);
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
+$(document).ready(function () {
+  $("#year").text(new Date().getFullYear());
+});

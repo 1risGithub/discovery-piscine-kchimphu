@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rush Mini Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/loader.css" />
     <link rel="icon" href="img/logo/favicon-16x16.png" type="image/png" />
   </head>
-  <body class="flex flex-col items-center justify-center h-screen relative">
-    <!-- Loader -->
+  <body
+    class="flex flex-col items-center justify-center h-screen relative bg-neutral-900"
+  >
     <div id="loader">
       <div class="spinner"></div>
     </div>
-
     <h1 class="text-4xl font-extrabold mb-8 text-white drop-shadow-lg">
       Rush Mini Project
     </h1>
@@ -23,7 +24,13 @@
       <a href="dvichitl-cv.html" class="btn btn-light">dvichitl</a>
     </div>
 
-    <script src="js/script.js"></script>
+    <!-- Footer -->
+    <footer class="absolute bottom-4 text-neutral-400 text-sm">
+      &copy; <span id="year"></span> Rush Mini Project
+    </footer>
+    <script src="js/datetime.js"></script>
     <script src="js/loader.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/datetime.js"></script>
   </body>
 </html>

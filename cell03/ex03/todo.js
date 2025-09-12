@@ -38,7 +38,7 @@ const updateEmptyMessage = () => {
 };
 
 // Create new todo
-const addTodo = (text) => {
+const addTodo = (text, fromLoad = false) => {
   const div = document.createElement("div");
   div.className = "todo_item";
   div.textContent = text;
@@ -49,18 +49,24 @@ const addTodo = (text) => {
       updateEmptyMessage();
     }
   };
-  list.prepend(div);
+  // ถ้าโหลดจาก cookie → append (คงลำดับเดิม)
+  // ถ้า user เพิ่มใหม่ → prepend (เอาใหม่ขึ้นบน)
+  if (fromLoad) {
+    list.append(div);
+  } else {
+    list.prepend(div);
+  }
   saveTodos();
   updateEmptyMessage();
 };
 
-// Load todos
-getTodos().forEach(addTodo);
+// Load todos (Append)
+getTodos().forEach((todo) => addTodo(todo, true));
 
 // New button
 document.getElementById("new_btn").onclick = () => {
   const text = prompt("Enter a new TO DO:");
-  if (text?.trim()) addTodo(text.trim());
+  if (text?.trim()) addTodo(text.trim(), false);
 };
 
 // Initialize empty message
