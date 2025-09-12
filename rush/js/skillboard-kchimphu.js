@@ -20,7 +20,7 @@ $(document).ready(function () {
       name: "NextJS",
       icon: "img/logo/nextjs.png",
       description: "Full Stack Framework",
-      level: 50,
+      level: 30,
     },
     {
       name: "Python",
@@ -32,19 +32,19 @@ $(document).ready(function () {
       name: "FastAPI",
       icon: "img/logo/fastapi.png",
       description: "Backend Framework",
-      level: 30,
+      level: 40,
     },
     {
       name: "PHP",
       icon: "img/logo/php.jpeg",
       description: "Web Development",
-      level: 60,
+      level: 50,
     },
     {
       name: "PostgreSQL",
       icon: "img/logo/postgresql.png",
       description: "Database",
-      level: 60,
+      level: 40,
     },
     {
       name: "MicrosoftSQL",
@@ -56,7 +56,7 @@ $(document).ready(function () {
       name: "MongoDB",
       icon: "img/logo/mongodb.png",
       description: "Database",
-      level: 75,
+      level: 35,
     },
     {
       name: "CSS",
@@ -68,13 +68,13 @@ $(document).ready(function () {
       name: "TailwindCSS",
       icon: "img/logo/tailwind.png",
       description: "UI Framework",
-      level: 40,
+      level: 30,
     },
     {
       name: "Bootstrap",
       icon: "img/logo/bootstrap.png",
       description: "UI Framework",
-      level: 60,
+      level: 50,
     },
     {
       name: "Docker",
@@ -104,7 +104,7 @@ $(document).ready(function () {
       name: "STM",
       icon: "img/logo/STMicroelectronics.png",
       description: "Microcontroller",
-      level: 50,
+      level: 45,
     },
     {
       name: "Raspberry Pi",
