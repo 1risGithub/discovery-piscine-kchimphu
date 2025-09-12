@@ -40,8 +40,8 @@ $(document).ready(function () {
     emptyMsg.toggle($(".todo_item").length === 0);
   }
 
-  // add task
-  function addTodo(text) {
+  // add task (option: isNewTask)
+  function addTodo(text, isNew = false) {
     const div = $("<div></div>")
       .addClass("todo_item")
       .text(text)
@@ -52,18 +52,24 @@ $(document).ready(function () {
           updateEmptyMessage();
         }
       });
-    list.prepend(div);
+
+    if (isNew) {
+      list.prepend(div);
+    } else {
+      list.append(div);
+    }
+
     saveTodos();
     updateEmptyMessage();
   }
 
-  // load tasks
-  getTodos().forEach(addTodo);
+  // load tasks from cookie (keep order)
+  getTodos().forEach((t) => addTodo(t, false));
 
   // new button
   $("#new_btn").click(function () {
     const text = prompt("Enter a new TO DO:");
-    if (text && text.trim()) addTodo(text.trim());
+    if (text && text.trim()) addTodo(text.trim(), true);
   });
 
   updateEmptyMessage();
