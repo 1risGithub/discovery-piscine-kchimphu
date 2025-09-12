@@ -15,20 +15,52 @@
   <body class="bg-white text-neutral-800">
     <!-- Navbar -->
     <nav
-      class="fixed top-0 left-0 w-full bg-white border-b border-neutral-200 px-8 py-4 flex justify-between items-center z-50"
+      class="fixed top-0 left-0 w-full bg-white border-b border-neutral-200 px-6 sm:px-8 py-4 flex justify-between items-center z-50"
     >
       <!-- Left: Logo -->
-      <span class="font-bold tracking-wider">DVICHITL</span>
+      <span class="font-bold tracking-wider text-lg sm:text-xl">KCHIMPHU</span>
+
+      <!-- Hamburger button (mobile only) -->
+      <button
+        id="menu-toggle"
+        class="sm:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-neutral-100"
+        aria-label="Toggle menu"
+      >
+        <svg
+          id="menu-icon"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
 
       <!-- Right: Links + DateTime -->
-      <div class="flex items-center space-x-6">
+      <div
+        id="navbar-links"
+        class="hidden sm:flex flex-col sm:flex-row sm:items-center sm:space-x-6 absolute sm:static top-full left-0 w-full sm:w-auto bg-white sm:bg-transparent border-t sm:border-0 border-neutral-200 sm:mt-0 mt-2 sm:p-0 p-4"
+      >
         <!-- DateTime -->
-        <span id="navbar-date-time" class="text-sm text-neutral-500"></span>
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#skill" class="hover:underline">Skill</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-        <a href="#education" class="hover:underline">Education</a>
+        <span
+          id="navbar-date-time"
+          class="text-sm text-neutral-500 mb-3 sm:mb-0"
+        ></span>
+        <a href="index.html" class="block py-2 sm:py-0 hover:underline">Home</a>
+        <a href="#about" class="block py-2 sm:py-0 hover:underline">About</a>
+        <a href="#skill" class="block py-2 sm:py-0 hover:underline">Skill</a>
+        <a href="#contact" class="block py-2 sm:py-0 hover:underline"
+          >Contact</a
+        >
+        <a href="#education" class="block py-2 sm:py-0 hover:underline"
+          >Education</a
+        >
       </div>
     </nav>
 
@@ -106,7 +138,9 @@
       <section id="skill" class="mt-24 bg-neutral-50 py-12 scroll-mt-28">
         <div class="max-w-5xl mx-auto px-4">
           <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-red-900 mb-2">My Skills Board</h2>
+            <h2 class="text-3xl font-bold text-red-900 mb-2">
+              My Skills Board
+            </h2>
             <p class="text-neutral-600 text-base">
               Tools, frameworks, and technologies I’ve worked with
             </p>
@@ -250,5 +284,6 @@
     <script src="js/skillboard-dvichitl.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
   </body>
 </html>
