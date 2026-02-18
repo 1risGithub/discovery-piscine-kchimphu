@@ -106,7 +106,7 @@ Open each folder to view exercises.
 
 # 👨‍💻 Author
 
-Iris
+Latte
 
 Software Developer
 
